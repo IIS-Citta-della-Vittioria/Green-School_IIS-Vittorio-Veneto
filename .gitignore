@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code workspace noise
+.vscode/*.code-workspace
+
+# Optional local media staging
+assets/videos/raw/
