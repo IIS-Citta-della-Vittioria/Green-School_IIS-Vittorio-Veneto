@@ -297,6 +297,12 @@ section {
   border-radius: var(--radius-m);
   padding: 1.3rem;
   box-shadow: 0 8px 20px rgba(17, 43, 35, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(17, 43, 35, 0.1);
 }
 
 .card h3 {
@@ -464,9 +470,40 @@ section {
 }
 
 .page-hero {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(130deg, #0f302b, #1d5f52);
   color: #edf8f2;
   padding: 5.5rem 0 4rem;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  right: -120px;
+  top: -110px;
+  background: radial-gradient(circle, rgba(255, 223, 118, 0.35), rgba(255, 223, 118, 0));
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  left: -100px;
+  bottom: -130px;
+  background: radial-gradient(circle, rgba(117, 207, 174, 0.26), rgba(117, 207, 174, 0));
+  pointer-events: none;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero p {
@@ -652,6 +689,62 @@ th {
   color: #0f4f44;
 }
 
+.news-sync p {
+  margin: 0.15rem 0;
+}
+
+.news-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.news-item {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.news-item h3 {
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+.news-item p {
+  margin: 0;
+  color: #3b524a;
+}
+
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.news-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.58rem;
+  border-radius: 999px;
+  background: #e9f4ef;
+  border: 1px solid #d0e3db;
+  color: #194d42;
+  font-size: 0.79rem;
+  font-weight: 700;
+}
+
+.news-link {
+  margin-top: 0.3rem;
+  font-weight: 700;
+  color: #115c50;
+  text-decoration: none;
+}
+
+.news-link:hover,
+.news-link:focus-visible {
+  text-decoration: underline;
+}
+
 @keyframes strip-scroll {
   from {
     transform: translateX(0);
@@ -669,6 +762,7 @@ th {
   .grid-cards,
   .gallery,
   .photo-wall,
+  .news-grid,
   .split,
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -714,6 +808,7 @@ th {
   .grid-cards,
   .gallery,
   .photo-wall,
+  .news-grid,
   .split,
   .footer-grid {
     grid-template-columns: 1fr;

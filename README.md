@@ -28,7 +28,7 @@ A inizio anno scolastico:
 5. In homepage index.html aggiorna call to action e indicatori (metriche).
 
 Durante l'anno:
-1. Aggiorna pages/news.html con articoli sintetici e risultati intermedi.
+1. Verifica periodicamente pages/news.html (la sezione energia e aggiornata automaticamente dal workflow).
 2. Inserisci foto/video in assets/ e collega i contenuti nelle pagine.
 3. Mantieni coerenza nel tono (formale, chiaro, orientato ai risultati).
 
@@ -104,6 +104,25 @@ Ogni volta che modifichi il sito:
 3. git push
 
 GitHub Pages pubblichera automaticamente la nuova versione.
+
+## 10-bis) News automatiche giornaliere (energia rinnovabile)
+Il progetto include un sistema automatico che aggiorna `data/news.json` una volta al giorno.
+
+Componenti:
+1. `scripts/update_news_feed.py`: aggrega feed RSS di settore.
+2. `.github/workflows/update-news.yml`: esecuzione giornaliera e commit automatico del JSON.
+3. `pages/news.html`: render dinamico delle notizie.
+
+Fonti preconfigurate (modificabili nello script):
+1. QualEnergia
+2. UN Climate News
+3. IEA News
+4. PV Magazine
+
+Manutenzione:
+1. Se una fonte smette di funzionare, aggiornare URL nel file `scripts/update_news_feed.py`.
+2. Per test manuale, avviare il workflow da GitHub Actions (`workflow_dispatch`).
+3. Se il feed e vuoto, la pagina News mostra fallback automatico senza rompere il layout.
 
 ## 11) Linee editoriali consigliate
 - tono formale, preciso, orientato all'azione;

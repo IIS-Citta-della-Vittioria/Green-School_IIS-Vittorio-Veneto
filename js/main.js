@@ -133,4 +133,89 @@
       }
     });
   });
+
+  const formatDate = (isoValue) => {
+    if (!isoValue) return "data non disponibile";
+    const date = new Date(isoValue);
+    if (Number.isNaN(date.getTime())) return "data non disponibile";
+    return new Intl.DateTimeFormat("it-IT", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(date);
+  };
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const newsContainer = document.querySelector("[data-news-feed]");
+  if (newsContainer) {
+    const newsPath = newsContainer.getAttribute("data-news-path") || "../data/news.json";
+    const updatedNode = document.querySelector("[data-news-updated]");
+    const statusNode = document.querySelector("[data-news-status]");
+
+    const renderFallback = (message) => {
+      newsContainer.innerHTML = `
+        <article class="card news-item reveal visible">
+          <h3>Feed temporaneamente non disponibile</h3>
+          <p>${message}</p>
+        </article>
+      `;
+      if (statusNode) {
+        statusNode.textContent = "degradato";
+      }
+    };
+
+    fetch(newsPath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("news feed non raggiungibile");
+        }
+        return response.json();
+      })
+      .then((payload) => {
+        const items = Array.isArray(payload.items) ? payload.items : [];
+
+        if (updatedNode) {
+          updatedNode.textContent = formatDate(payload.updatedAt);
+        }
+        if (statusNode) {
+          statusNode.textContent = items.length > 0 ? "attivo" : "in attesa di contenuti";
+        }
+
+        if (items.length === 0) {
+          renderFallback("Nessuna notizia disponibile al momento. Riprova più tardi.");
+          return;
+        }
+
+        newsContainer.innerHTML = items
+          .map((item) => {
+            const title = escapeHtml(item.title || "Notizia");
+            const summary = escapeHtml(item.summary || "Nessun riepilogo disponibile.");
+            const source = escapeHtml(item.source || "Fonte non indicata");
+            const url = escapeHtml(item.url || "#");
+            const pubDate = formatDate(item.publishedAt);
+            return `
+              <article class="card news-item reveal visible">
+                <div class="news-meta">
+                  <span class="news-chip">${source}</span>
+                  <span class="news-chip">${pubDate}</span>
+                </div>
+                <h3>${title}</h3>
+                <p>${summary}</p>
+                <a class="news-link" href="${url}" target="_blank" rel="noopener noreferrer">Apri notizia</a>
+              </article>
+            `;
+          })
+          .join("");
+      })
+      .catch(() => {
+        renderFallback("Errore nella sincronizzazione automatica. Il sistema riproverà al prossimo aggiornamento giornaliero.");
+      });
+  }
 })();

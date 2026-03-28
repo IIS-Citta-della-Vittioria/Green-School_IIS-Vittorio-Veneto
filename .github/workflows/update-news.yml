@@ -1,0 +1,37 @@
+name: Aggiornamento News Green
+
+on:
+  schedule:
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Aggiorna feed news
+        run: python scripts/update_news_feed.py
+
+      - name: Commit e push se ci sono modifiche
+        run: |
+          git config user.name "green-school-bot"
+          git config user.email "green-school-bot@users.noreply.github.com"
+          git add data/news.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica da pubblicare"
+          else
+            git commit -m "Aggiornamento automatico notizie energia"
+            git push
+          fi

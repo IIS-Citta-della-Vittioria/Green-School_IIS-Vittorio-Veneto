@@ -33,16 +33,43 @@
     <section class="page-hero">
       <div class="container reveal">
         <span class="kicker">Aggiornamenti</span>
-        <h1>News e comunicazioni</h1>
-        <p>Sezione editoriale dedicata a eventi, incontri, risultati intermedi e storie di innovazione ambientale nella comunita scolastica.</p>
+        <h1>News energia e sostenibilita</h1>
+        <p>Sezione aggiornata automaticamente con notizie su energia rinnovabile e transizione ecologica, affiancata da comunicazioni ufficiali dell'istituto.</p>
       </div>
     </section>
 
     <section class="container">
+      <div class="impact-strip reveal" data-strip data-paused="false" aria-label="Flash notizie Green School">
+        <div class="impact-track">
+          <span class="impact-item">Aggiornamento giornaliero automatico</span>
+          <span class="impact-item">Focus: rinnovabili e scuola</span>
+          <span class="impact-item">Fonti verificate e selezionate</span>
+          <span class="impact-item">Contenuti consultabili da studenti e docenti</span>
+          <span class="impact-item">Aggiornamento giornaliero automatico</span>
+          <span class="impact-item">Focus: rinnovabili e scuola</span>
+          <span class="impact-item">Fonti verificate e selezionate</span>
+          <span class="impact-item">Contenuti consultabili da studenti e docenti</span>
+        </div>
+        <button class="impact-toggle" type="button" data-strip-toggle aria-pressed="false">Pausa movimento</button>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title reveal">Feed automatico quotidiano</h2>
+      <p class="section-intro reveal">Le notizie vengono raccolte ogni giorno da fonti specializzate e istituzionali. L'ultima sincronizzazione e visibile nel riquadro seguente.</p>
+      <div class="card reveal news-sync">
+        <p><strong>Ultimo aggiornamento:</strong> <span data-news-updated>in caricamento...</span></p>
+        <p><strong>Stato servizio:</strong> <span data-news-status>inizializzazione feed</span></p>
+      </div>
+      <div class="news-grid" data-news-feed data-news-path="../data/news.json" aria-live="polite"></div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title reveal">Comunicazioni Green School</h2>
       <div class="grid-cards">
-        <article class="card reveal"><span class="tag">In evidenza</span><h3>Avvio tavolo tecnico di monitoraggio</h3><p>Presentazione del piano annuale con focus su consumi, obiettivi e indicatori di impatto.</p></article>
-        <article class="card reveal"><span class="tag">Evento</span><h3>Settimana dell'energia sostenibile</h3><p>Ciclo di laboratori e incontri con esperti su rinnovabili e transizione ecologica.</p></article>
-        <article class="card reveal"><span class="tag">Comunicazione</span><h3>Report intermedio di progetto</h3><p>Pubblicazione dei primi dati e delle azioni completate nei diversi gruppi classe.</p></article>
+        <article class="card reveal"><span class="tag">In evidenza</span><h3>Avvio tavolo tecnico di monitoraggio</h3><p>Presentazione del piano annuale con focus su consumi, obiettivi e indicatori di impatto per dipartimenti e consigli di classe.</p></article>
+        <article class="card reveal"><span class="tag">Evento</span><h3>Settimana dell'energia sostenibile</h3><p>Ciclo di laboratori, testimonianze e momenti di confronto con esperti su rinnovabili, comunita energetiche e innovazione didattica.</p></article>
+        <article class="card reveal"><span class="tag">Report</span><h3>Restituzione periodica risultati</h3><p>Pubblicazione delle azioni completate, degli indicatori monitorati e delle prospettive operative per l'ultima fase dell'anno scolastico.</p></article>
       </div>
     </section>
   </main>
