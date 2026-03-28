@@ -3,60 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Archivio Green School 2024-2025 - IIS Citta della Vittoria.">
   <title>Archivio 2024-2025 | Green School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Green School - Archivio 2024-2025</h1>
-    <p><a href="index.html">Torna all'indice archivio</a></p>
+  <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html"><strong>Green School</strong>IIS Citta della Vittoria</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav-list" id="menu" data-nav-list>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/progetto.html">Il Progetto</a></li>
+          <li><a href="../pages/edizione-corrente.html">Edizione Corrente</a></li>
+          <li><a href="index.html">Archivio</a></li>
+          <li><a href="../pages/news.html">News</a></li>
+          <li><a href="../pages/partecipa.html">Partecipa</a></li>
+          <li><a href="../pages/contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Panoramica Annata</h2>
-      <p>Nome edizione: Salute, sostenibilita e azioni misurabili.</p>
-      <p>L'annata 2024-2025 ha approfondito la relazione tra stili di vita, impatto ambientale e monitoraggio energetico con attivita laboratoriali e divulgative.</p>
+  <main id="contenuto">
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="kicker">Archivio storico</span>
+        <h1>Edizione 2024-2025</h1>
+        <p>Salute, sostenibilita e azioni misurabili: un'annata ad alta intensita progettuale con obiettivi monitorati e risultati quantificabili.</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Progetti Realizzati</h2>
-      <ul>
-        <li>Monitoraggio fumo e impatti su salute e prestazioni.</li>
-        <li>Fast fashion e consumo responsabile.</li>
-        <li>Mobilita sostenibile e proposte per il territorio.</li>
-        <li>Acqua: studio su dissalazione e integrazione con fotovoltaico.</li>
-        <li>Rootify e laboratorio Eco Sapone (riuso dell'olio esausto).</li>
-        <li>Monitoraggio consumi energetici nelle classi.</li>
-      </ul>
+    <section class="container">
+      <h2 class="section-title reveal">Panoramica Annata</h2>
+      <p class="section-intro reveal">Il lavoro ha integrato educazione alla salute, responsabilita ambientale e innovazione tecnica, con attivita laboratoriali su energia, risorse e comportamenti sostenibili.</p>
+      <div class="grid-cards">
+        <article class="card reveal"><h3>Progetti realizzati</h3><p>Monitoraggio fumo, fast fashion e consumo responsabile, mobilita sostenibile, progetto acqua, Rootify e laboratorio Eco Sapone, monitoraggio energetico delle classi.</p></article>
+        <article class="card reveal"><h3>Partecipanti</h3><p><strong>Docenti:</strong> Montoro Iuliano Francesco, Rizzo Erika, Carambia Giuseppe, Filieri Daniele, Beggiato Matteo, La Malfa Flavio, Botteon Veronica. <strong>Collaboratori ed ecodetective:</strong> Segat Riccardo, Pol Ettore, Battistella Gabriel. <strong>Studenti:</strong> gruppo Energy Team multi-classe.</p></article>
+        <article class="card reveal"><h3>Risultati annuali</h3><p>Riduzione consumi energetici del 42,93%, passaggio da 4100,93 kWh a 2762,65 kWh, risparmio economico stimato pari a 408,18 euro.</p></article>
+      </div>
     </section>
 
-    <section>
-      <h2>Partecipanti</h2>
-      <h3>Docenti</h3>
-      <p>Montoro Iuliano Francesco, Rizzo Erika, Carambia Giuseppe, Filieri Daniele, Beggiato Matteo, La Malfa Flavio, Botteon Veronica.</p>
-      <h3>Collaboratori ed ecodetective</h3>
-      <p>Segat Riccardo, Pol Ettore, Battistella Gabriel.</p>
-      <h3>Studenti Energy Team</h3>
-      <p>Gruppo esteso multi-classe (elenco completo nel materiale annuale e nelle pagine storiche dell'annata).</p>
-    </section>
-
-    <section>
-      <h2>Risultati</h2>
-      <ul>
-        <li>Riduzione consumi energetici: 42,93%.</li>
-        <li>Consumo da 4100,93 kWh a 2762,65 kWh.</li>
-        <li>Risparmio economico stimato: 408,18 euro.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Galleria Fotografica</h2>
-      <p>Link rilevato nel PDF:</p>
-      <ul>
-        <li><a href="https://drive.google.com/drive/folders/1ZF5yVzBdQgYyobF2YVMKnpoA1ocUNLiq?usp=sharing" target="_blank" rel="noopener noreferrer">Drive foto annata 2024-2025</a></li>
-      </ul>
-      <p>Fonte interna: archivio pdf annate vecchie/All.2_PresAttivita_GSC-12_2024_2025.pdf</p>
+    <section class="container">
+      <h2 class="section-title reveal">Documentazione e Galleria</h2>
+      <div class="card reveal">
+        <p>La raccolta fotografica completa dell'annata e conservata in archivio riservato e accessibile esclusivamente ai referenti autorizzati.</p>
+        <p>Per richieste istituzionali relative ai materiali, fare riferimento alla sezione Contatti.</p>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section><h3>Archivio Green School</h3><p>Dati, evidenze e continuita progettuale.</p></section>
+      <section><h3>Indice annate</h3><ul><li><a href="index.html">Torna all'archivio</a></li></ul></section>
+      <section><h3>Contatti</h3><ul><li><a href="../pages/contatti.html">Referenti progetto</a></li></ul></section>
+    </div>
+    <p class="foot-note">© <span data-year></span> IIS Citta della Vittoria - Green School.</p>
+  </footer>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

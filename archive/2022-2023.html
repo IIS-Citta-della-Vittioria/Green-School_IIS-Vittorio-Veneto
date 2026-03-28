@@ -3,59 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Archivio Green School 2022-2023 - IIS Citta della Vittoria.">
   <title>Archivio 2022-2023 | Green School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Green School - Archivio 2022-2023</h1>
-    <p><a href="index.html">Torna all'indice archivio</a></p>
+  <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="../index.html"><strong>Green School</strong>IIS Citta della Vittoria</a>
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav-list" id="menu" data-nav-list>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/progetto.html">Il Progetto</a></li>
+          <li><a href="../pages/edizione-corrente.html">Edizione Corrente</a></li>
+          <li><a href="index.html">Archivio</a></li>
+          <li><a href="../pages/news.html">News</a></li>
+          <li><a href="../pages/partecipa.html">Partecipa</a></li>
+          <li><a href="../pages/contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Panoramica Annata</h2>
-      <p>Nome edizione: Transizione ecologica e strumenti digitali.</p>
-      <p>L'annata 2022-2023 ha sviluppato progetti su mobilita sostenibile, divulgazione ambientale e strumenti digitali con presentazione pubblica finale.</p>
+  <main id="contenuto">
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="kicker">Archivio storico</span>
+        <h1>Edizione 2022-2023</h1>
+        <p>Transizione ecologica e strumenti digitali: un'annata orientata a soluzioni concrete, partecipazione attiva e restituzione pubblica dei risultati.</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Progetti Realizzati</h2>
-      <ul>
-        <li>Progetto Nova: studio su logistica elettrica e battery swap.</li>
-        <li>App WalkVV: supporto alla mobilita attiva e ai percorsi urbani.</li>
-        <li>Podcast Green School: divulgazione ambientale per scuola e territorio.</li>
-        <li>Domotica e consumi: sperimentazioni su controllo intelligente dell'illuminazione.</li>
-        <li>Evento Green School Citta della Vittoria con restituzione pubblica.</li>
-      </ul>
+    <section class="container">
+      <h2 class="section-title reveal">Panoramica Annata</h2>
+      <p class="section-intro reveal">L'Energy Team ha sviluppato progettualita su mobilita sostenibile, divulgazione ambientale e innovazione digitale, con un approccio didattico interdisciplinare e forte connessione col territorio.</p>
+      <div class="grid-cards">
+        <article class="card reveal"><h3>Progetti realizzati</h3><p>Progetto Nova, App WalkVV, Podcast Green School, sperimentazioni di domotica applicata ai consumi e evento pubblico finale Green School Citta della Vittoria.</p></article>
+        <article class="card reveal"><h3>Partecipanti</h3><p><strong>Docenti:</strong> Montoro Iuliano Francesco, Carambia Giuseppe, Filieri Daniele, Rizzo Erika. <strong>Collaboratori:</strong> Massaro Simone. <strong>Studenti:</strong> gruppo Energy Team multi-classe con partecipazione estesa.</p></article>
+        <article class="card reveal"><h3>Risultati annuali</h3><p>Realizzazione di strumenti digitali replicabili, consolidamento della comunicazione ambientale di istituto e ampliamento del coinvolgimento studentesco.</p></article>
+      </div>
     </section>
 
-    <section>
-      <h2>Partecipanti</h2>
-      <h3>Docenti</h3>
-      <p>Montoro Iuliano Francesco, Carambia Giuseppe, Filieri Daniele, Rizzo Erika.</p>
-      <h3>Collaboratori</h3>
-      <p>Massaro Simone.</p>
-      <h3>Studenti Energy Team</h3>
-      <p>Gruppo esteso multi-classe (elenco completo nel materiale annuale e nelle pagine storiche dell'annata).</p>
-    </section>
-
-    <section>
-      <h2>Risultati</h2>
-      <ul>
-        <li>Realizzazione di strumenti digitali replicabili (app e podcast).</li>
-        <li>Consolidamento della comunicazione ambientale di istituto.</li>
-        <li>Coinvolgimento attivo di studenti e partner durante l'evento pubblico.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Galleria Fotografica</h2>
-      <p>Link rilevato nel PDF:</p>
-      <ul>
-        <li><a href="https://www.iisvittorioveneto.edu.it/2023/05/25/walkvv/" target="_blank" rel="noopener noreferrer">Approfondimento WalkVV</a></li>
-      </ul>
-      <p>Fonte interna: archivio pdf annate vecchie/All.2_PresAttivita_GSC-10_2022_2023.pptx.pdf</p>
+    <section class="container">
+      <h2 class="section-title reveal">Documentazione e Galleria</h2>
+      <div class="card reveal">
+        <p>Le raccolte fotografiche complete sono gestite in archivio interno con accesso riservato ai referenti autorizzati.</p>
+        <p>Approfondimento pubblico progetto WalkVV: <a href="https://www.iisvittorioveneto.edu.it/2023/05/25/walkvv/" target="_blank" rel="noopener noreferrer">pagina istituzionale</a>.</p>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section><h3>Archivio Green School</h3><p>Continuita didattica e memoria progettuale.</p></section>
+      <section><h3>Indice annate</h3><ul><li><a href="index.html">Torna all'archivio</a></li></ul></section>
+      <section><h3>Contatti</h3><ul><li><a href="../pages/contatti.html">Referenti progetto</a></li></ul></section>
+    </div>
+    <p class="foot-note">© <span data-year></span> IIS Citta della Vittoria - Green School.</p>
+  </footer>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>
