@@ -1,4 +1,7 @@
 (() => {
+  const loopHeroVideoUrl =
+    "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4";
+
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navList = document.querySelector("[data-nav-list]");
 
@@ -45,24 +48,45 @@
     footerYear.textContent = String(new Date().getFullYear());
   }
 
-  const progressBar = document.createElement("div");
-  progressBar.className = "scroll-progress";
-  progressBar.innerHTML = "<span></span>";
-  document.body.appendChild(progressBar);
-
-  const progressValue = progressBar.querySelector("span");
-  const updateProgress = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const current = Math.max(0, window.scrollY);
-    const ratio = max > 0 ? (current / max) * 100 : 0;
-    if (progressValue) {
-      progressValue.style.width = `${Math.min(100, ratio)}%`;
+  const ensureLoopingHeroVideos = () => {
+    const homeSource = document.querySelector(".hero video source");
+    if (homeSource && homeSource.getAttribute("src") !== loopHeroVideoUrl) {
+      homeSource.setAttribute("src", loopHeroVideoUrl);
+      const homeVideo = homeSource.closest("video");
+      if (homeVideo) {
+        homeVideo.load();
+      }
     }
+
+    document.querySelectorAll(".page-hero").forEach((hero) => {
+      if (hero.querySelector(".page-hero-video")) {
+        return;
+      }
+
+      const video = document.createElement("video");
+      video.className = "page-hero-video";
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.setAttribute("aria-hidden", "true");
+
+      const source = document.createElement("source");
+      source.src = loopHeroVideoUrl;
+      source.type = "video/mp4";
+      video.appendChild(source);
+
+      const overlay = document.createElement("div");
+      overlay.className = "page-hero-video-overlay";
+      overlay.setAttribute("aria-hidden", "true");
+
+      hero.prepend(overlay);
+      hero.prepend(video);
+    });
   };
 
-  updateProgress();
-  window.addEventListener("scroll", updateProgress, { passive: true });
-  window.addEventListener("resize", updateProgress);
+  ensureLoopingHeroVideos();
 
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length > 0 && "IntersectionObserver" in window) {
