@@ -12,10 +12,10 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 FEEDS = [
+    ("IIS Vittorio Veneto", "https://www.iisvittorioveneto.edu.it/feed/"),
+    ("Green School IIS", "https://greenschoolvv.altervista.org/feed/"),
+    ("Regione Veneto", "https://www.regione.veneto.it/rss"),
     ("QualEnergia", "https://www.qualenergia.it/feed/"),
-    ("UN Climate News", "https://news.un.org/feed/subscribe/en/news/topic/climate-change/feed/rss.xml"),
-    ("IEA News", "https://www.iea.org/news/rss"),
-    ("PV Magazine", "https://www.pv-magazine.com/feed/"),
 ]
 
 MAX_ITEMS_TOTAL = 14

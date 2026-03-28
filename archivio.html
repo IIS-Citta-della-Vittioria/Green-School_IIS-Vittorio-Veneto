@@ -2,11 +2,58 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=archive/index.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reindirizzamento | Archivio</title>
+  <meta name="description" content="Accesso rapido all'archivio Green School con redirect assistito e contenuti estesi.">
+  <title>Accesso Archivio | Green School Treviso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <p>Reindirizzamento in corso verso l'archivio. Se non avviene automaticamente, apri <a href="archive/index.html">questa pagina</a>.</p>
+  <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><strong>Green School</strong>IIS Citta della Vittoria</a>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav-list" data-nav-list>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="archive/index.html">Archivio</a></li>
+          <li><a href="pages/progetto.html">Il Progetto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="kicker">Redirect intelligente</span>
+        <h1>Stai per entrare nell'archivio annualita</h1>
+        <p>Verrai reindirizzato automaticamente all'indice storico Green School. Puoi anche aprire subito l'archivio completo dal pulsante.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="archive/index.html">Apri ora l'archivio</a>
+          <a class="btn btn-ghost" href="index.html">Torna alla home</a>
+        </div>
+      </div>
+    </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section><h3>Archivio Green School</h3><p>Memoria attiva del percorso ambientale scolastico.</p></section>
+      <section><h3>Vai a</h3><ul><li><a href="archive/index.html">Indice annate</a></li></ul></section>
+      <section><h3>Supporto</h3><ul><li><a href="pages/contatti.html">Contatti</a></li></ul></section>
+    </div>
+    <p class="foot-note">(c) <span data-year></span> IIS Citta della Vittoria - Green School.</p>
+  </footer>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "archive/index.html";
+    }, 3200);
+  </script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
+

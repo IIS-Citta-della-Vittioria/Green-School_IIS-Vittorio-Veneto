@@ -16,10 +16,25 @@
     });
   }
 
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const normalizePath = (value) => {
+    let output = String(value || "").replace(/\/+/g, "/");
+    if (output.endsWith("/index.html")) {
+      output = output.slice(0, -"/index.html".length) || "/";
+    }
+    if (output.length > 1 && output.endsWith("/")) {
+      output = output.slice(0, -1);
+    }
+    return output || "/";
+  };
+
+  const currentPath = normalizePath(window.location.pathname);
   document.querySelectorAll("[data-nav-list] a").forEach((link) => {
     const href = link.getAttribute("href") || "";
-    if (href.endsWith(currentPath)) {
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      return;
+    }
+    const targetPath = normalizePath(new URL(href, window.location.href).pathname);
+    if (targetPath === currentPath) {
       link.classList.add("is-active");
       link.setAttribute("aria-current", "page");
     }
@@ -29,6 +44,25 @@
   if (footerYear) {
     footerYear.textContent = String(new Date().getFullYear());
   }
+
+  const progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  progressBar.innerHTML = "<span></span>";
+  document.body.appendChild(progressBar);
+
+  const progressValue = progressBar.querySelector("span");
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const current = Math.max(0, window.scrollY);
+    const ratio = max > 0 ? (current / max) * 100 : 0;
+    if (progressValue) {
+      progressValue.style.width = `${Math.min(100, ratio)}%`;
+    }
+  };
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
 
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length > 0 && "IntersectionObserver" in window) {
@@ -94,23 +128,47 @@
     counters.forEach((counter) => counterObserver.observe(counter));
   }
 
-  document.querySelectorAll("[data-strip]").forEach((strip) => {
-    const toggle = strip.querySelector("[data-strip-toggle]");
-    if (!toggle) return;
+  const tiltTargets = document.querySelectorAll(".card, .topic-card, .types-card");
+  if (!reduceMotion) {
+    tiltTargets.forEach((card) => {
+      card.setAttribute("data-tilt", "true");
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        const rotateY = (x - 0.5) * 8;
+        const rotateX = (0.5 - y) * 8;
+        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
 
-    const updateLabel = () => {
-      const paused = strip.getAttribute("data-paused") === "true";
-      toggle.textContent = paused ? "Riprendi movimento" : "Pausa movimento";
-      toggle.setAttribute("aria-pressed", String(paused));
+  document.querySelectorAll("[data-eco-tabs]").forEach((tabsRoot) => {
+    const buttons = tabsRoot.querySelectorAll(".eco-tab-btn");
+    const panels = tabsRoot.querySelectorAll(".eco-tab-panel");
+    if (buttons.length === 0 || panels.length === 0) return;
+
+    const activate = (id) => {
+      buttons.forEach((btn) => {
+        const selected = btn.getAttribute("data-tab-target") === id;
+        btn.setAttribute("aria-selected", String(selected));
+      });
+      panels.forEach((panel) => {
+        const active = panel.getAttribute("data-tab-id") === id;
+        panel.classList.toggle("is-active", active);
+      });
     };
 
-    toggle.addEventListener("click", () => {
-      const paused = strip.getAttribute("data-paused") === "true";
-      strip.setAttribute("data-paused", paused ? "false" : "true");
-      updateLabel();
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activate(btn.getAttribute("data-tab-target"));
+      });
     });
 
-    updateLabel();
+    activate(buttons[0].getAttribute("data-tab-target"));
   });
 
   document.querySelectorAll("[data-eco-quiz]").forEach((quiz) => {
@@ -159,25 +217,109 @@
     const updatedNode = document.querySelector("[data-news-updated]");
     const statusNode = document.querySelector("[data-news-status]");
 
-    const renderFallback = (message) => {
-      newsContainer.innerHTML = `
-        <article class="card news-item reveal visible">
-          <h3>Feed temporaneamente non disponibile</h3>
-          <p>${message}</p>
-        </article>
-      `;
+    const candidatePaths = (() => {
+      const cleanPath = newsPath.split("?")[0];
+      const localPath = cleanPath.replace(/^\.\.?\//, "");
+      const repoName = window.location.pathname.split("/").filter(Boolean)[0] || "";
+      const values = [cleanPath];
+
+      values.push(`/${localPath}`);
+      if (repoName) {
+        values.push(`/${repoName}/${localPath}`);
+      }
+
+      return Array.from(new Set(values.filter(Boolean)));
+    })();
+
+    const fetchWithRetry = async (path, maxAttempts = 4) => {
+      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        try {
+          const separator = path.includes("?") ? "&" : "?";
+          const response = await fetch(`${path}${separator}t=${Date.now()}`);
+          if (!response.ok) {
+            throw new Error(`http_${response.status}`);
+          }
+          return await response.json();
+        } catch (error) {
+          if (attempt === maxAttempts) {
+            throw error;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
+        }
+      }
+      throw new Error("unreachable");
+    };
+
+    const staticFallbackItems = [
+      {
+        title: "Green School Treviso: monitoraggi e azioni in istituto",
+        summary: "Approfondimenti sulle attivita locali di riduzione sprechi, monitoraggio consumi e coinvolgimento della comunita scolastica.",
+        source: "Green School IIS",
+        url: "https://greenschoolvv.altervista.org/",
+        publishedAt: new Date().toISOString(),
+      },
+      {
+        title: "IIS Vittorio Veneto: aggiornamenti istituzionali",
+        summary: "Comunicazioni ufficiali e iniziative scolastiche utili al percorso Green School del territorio.",
+        source: "IIS Vittorio Veneto",
+        url: "https://www.iisvittorioveneto.edu.it/",
+        publishedAt: new Date().toISOString(),
+      },
+      {
+        title: "QualEnergia: scenario energia e sostenibilita",
+        summary: "Notizie tecniche su transizione energetica, rinnovabili e politiche ambientali da fonti specializzate.",
+        source: "QualEnergia",
+        url: "https://www.qualenergia.it/",
+        publishedAt: new Date().toISOString(),
+      },
+    ];
+
+    const renderItems = (items) => {
+      newsContainer.innerHTML = items
+        .map((item) => {
+          const title = escapeHtml(item.title || "Notizia");
+          const summary = escapeHtml(item.summary || "Nessun riepilogo disponibile.");
+          const source = escapeHtml(item.source || "Fonte non indicata");
+          const url = escapeHtml(item.url || "#");
+          const pubDate = formatDate(item.publishedAt);
+          return `
+            <article class="card news-item reveal visible">
+              <div class="news-meta">
+                <span class="news-chip">${source}</span>
+                <span class="news-chip">${pubDate}</span>
+              </div>
+              <h3>${title}</h3>
+              <p>${summary}</p>
+              <a class="news-link" href="${url}" target="_blank" rel="noopener noreferrer">Apri notizia</a>
+            </article>
+          `;
+        })
+        .join("");
+    };
+
+    const renderFallback = () => {
+      renderItems(staticFallbackItems);
       if (statusNode) {
-        statusNode.textContent = "degradato";
+        statusNode.textContent = "fallback locale attivo";
+      }
+      if (updatedNode) {
+        updatedNode.textContent = formatDate(new Date().toISOString());
       }
     };
 
-    fetch(newsPath)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("news feed non raggiungibile");
+    const loadNews = async () => {
+      for (const path of candidatePaths) {
+        try {
+          const payload = await fetchWithRetry(path, 4);
+          return payload;
+        } catch (error) {
+          continue;
         }
-        return response.json();
-      })
+      }
+      throw new Error("all_paths_failed");
+    };
+
+    loadNews()
       .then((payload) => {
         const items = Array.isArray(payload.items) ? payload.items : [];
 
@@ -189,33 +331,14 @@
         }
 
         if (items.length === 0) {
-          renderFallback("Nessuna notizia disponibile al momento. Riprova più tardi.");
+          renderFallback();
           return;
         }
 
-        newsContainer.innerHTML = items
-          .map((item) => {
-            const title = escapeHtml(item.title || "Notizia");
-            const summary = escapeHtml(item.summary || "Nessun riepilogo disponibile.");
-            const source = escapeHtml(item.source || "Fonte non indicata");
-            const url = escapeHtml(item.url || "#");
-            const pubDate = formatDate(item.publishedAt);
-            return `
-              <article class="card news-item reveal visible">
-                <div class="news-meta">
-                  <span class="news-chip">${source}</span>
-                  <span class="news-chip">${pubDate}</span>
-                </div>
-                <h3>${title}</h3>
-                <p>${summary}</p>
-                <a class="news-link" href="${url}" target="_blank" rel="noopener noreferrer">Apri notizia</a>
-              </article>
-            `;
-          })
-          .join("");
+        renderItems(items);
       })
       .catch(() => {
-        renderFallback("Errore nella sincronizzazione automatica. Il sistema riproverà al prossimo aggiornamento giornaliero.");
+        renderFallback();
       });
   }
 })();
