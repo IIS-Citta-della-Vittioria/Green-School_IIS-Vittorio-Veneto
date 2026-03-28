@@ -93,4 +93,44 @@
 
     counters.forEach((counter) => counterObserver.observe(counter));
   }
+
+  document.querySelectorAll("[data-strip]").forEach((strip) => {
+    const toggle = strip.querySelector("[data-strip-toggle]");
+    if (!toggle) return;
+
+    const updateLabel = () => {
+      const paused = strip.getAttribute("data-paused") === "true";
+      toggle.textContent = paused ? "Riprendi movimento" : "Pausa movimento";
+      toggle.setAttribute("aria-pressed", String(paused));
+    };
+
+    toggle.addEventListener("click", () => {
+      const paused = strip.getAttribute("data-paused") === "true";
+      strip.setAttribute("data-paused", paused ? "false" : "true");
+      updateLabel();
+    });
+
+    updateLabel();
+  });
+
+  document.querySelectorAll("[data-eco-quiz]").forEach((quiz) => {
+    const result = quiz.querySelector("[data-quiz-result]");
+    quiz.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let total = 0;
+      let correct = 0;
+      quiz.querySelectorAll(".q").forEach((block) => {
+        total += 1;
+        const selected = block.querySelector("input[type='radio']:checked");
+        if (selected && selected.value === "ok") {
+          correct += 1;
+        }
+      });
+
+      if (result) {
+        result.textContent = `Punteggio: ${correct}/${total}. ${correct >= 2 ? "Ottimo orientamento green." : "Buon inizio: prova a rivedere le sezioni dell'annata."}`;
+      }
+    });
+  });
 })();

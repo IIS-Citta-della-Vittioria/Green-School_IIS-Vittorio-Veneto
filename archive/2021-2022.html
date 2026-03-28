@@ -40,6 +40,24 @@
     </section>
 
     <section class="container">
+      <div class="impact-strip reveal" data-strip data-paused="false" aria-label="Indicatori in evidenza annata 2021-2022">
+        <div class="impact-track">
+          <span class="impact-item">Campagna M'illumino di meno</span>
+          <span class="impact-item">Primo monitoraggio consumi</span>
+          <span class="impact-item">Tutoraggio nelle classi</span>
+          <span class="impact-item">Comunicazione digitale</span>
+          <span class="impact-item">Cultura green condivisa</span>
+          <span class="impact-item">Campagna M'illumino di meno</span>
+          <span class="impact-item">Primo monitoraggio consumi</span>
+          <span class="impact-item">Tutoraggio nelle classi</span>
+          <span class="impact-item">Comunicazione digitale</span>
+          <span class="impact-item">Cultura green condivisa</span>
+        </div>
+        <button class="impact-toggle" type="button" data-strip-toggle aria-pressed="false">Pausa movimento</button>
+      </div>
+    </section>
+
+    <section class="container">
       <h2 class="section-title reveal">Panoramica Annata</h2>
       <p class="section-intro reveal">Nome edizione: Comunicare la sostenibilita con progetti concreti. L'Energy Team ha impostato un metodo operativo basato su osservazione dei consumi, azioni di sensibilizzazione e diffusione interna delle buone pratiche.</p>
       <div class="grid-cards">
@@ -47,6 +65,23 @@
         <article class="card reveal"><h3>Partecipanti</h3><p><strong>Docenti:</strong> Montoro Iuliano Francesco, Carambia Giuseppe, Filieri Daniele, Rizzo Erika. <strong>Collaboratori:</strong> Massaro Simone. <strong>Studenti principali:</strong> Borgato Amerigo, Bin Gabriele, Fontana Sara, Tarantino Sonia, Manighetti Stefano.</p></article>
         <article class="card reveal"><h3>Risultati annuali</h3><p>Campagna M'illumino di meno, introduzione di pratiche di monitoraggio energetico e diffusione di comportamenti sostenibili tramite materiali multimediali.</p></article>
       </div>
+
+      <details class="people-accordion reveal">
+        <summary>Dettaglio partecipanti e stato dati 2021-2022</summary>
+        <ul class="people-list">
+          <li>Montoro Iuliano Francesco (docente)</li>
+          <li>Carambia Giuseppe (docente)</li>
+          <li>Filieri Daniele (docente)</li>
+          <li>Rizzo Erika (docente)</li>
+          <li>Massaro Simone (collaboratore)</li>
+          <li>Borgato Amerigo (studente)</li>
+          <li>Bin Gabriele (studente)</li>
+          <li>Fontana Sara (studentessa)</li>
+          <li>Tarantino Sonia (studentessa)</li>
+          <li>Manighetti Stefano (studente)</li>
+        </ul>
+        <p style="padding:0 1rem 1rem; margin:0; color:#3d544c;">Nota: l'elenco completo studenti 2021-2022 risulta parziale nei materiali digitali correnti. Posso integrarlo appena mi fornisci il nominativo completo dal PDF o da documento interno.</p>
+      </details>
     </section>
 
     <section class="container">
@@ -55,6 +90,29 @@
       <div class="card reveal">
         <p>Per consultazione o uso istituzionale delle immagini, contattare i referenti Green School tramite la sezione Contatti.</p>
       </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title reveal">Eco Challenge</h2>
+      <form class="eco-quiz card reveal" data-eco-quiz>
+        <div class="q">
+          <p>1. Quale campagna nazionale e stata richiamata nell'annata?</p>
+          <label><input type="radio" name="q1-2021" value="ok"> M'illumino di meno</label><br>
+          <label><input type="radio" name="q1-2021" value="no"> Earth Hour Campus</label>
+        </div>
+        <div class="q">
+          <p>2. L'annata ha introdotto monitoraggi energetici interni?</p>
+          <label><input type="radio" name="q2-2021" value="ok"> Si</label><br>
+          <label><input type="radio" name="q2-2021" value="no"> No</label>
+        </div>
+        <div class="q">
+          <p>3. Il percorso ha incluso attivita di comunicazione digitale?</p>
+          <label><input type="radio" name="q3-2021" value="ok"> Si</label><br>
+          <label><input type="radio" name="q3-2021" value="no"> No</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Verifica risposte</button>
+        <p class="quiz-result" data-quiz-result aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
