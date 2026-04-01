@@ -1,6 +1,60 @@
 (() => {
-  const loopHeroVideoUrl =
-    "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_015952_e1deeb12-8fb7-4071-a42a-60779fc64ab6.mp4";
+  const currentScriptUrl = new URL(document.currentScript?.getAttribute("src") || "js/main.js", window.location.href);
+  const siteRootUrl = new URL("../", currentScriptUrl);
+  const loopHeroVideoUrl = new URL("assets/media/2023-2024/PRESENTAZIONE SOCIAL.mp4", siteRootUrl).href;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const saveData = Boolean(navigator.connection && navigator.connection.saveData);
+
+  const bindTapToPause = (video) => {
+    if (!video || video.dataset.tapPauseBound === "true") return;
+    video.dataset.tapPauseBound = "true";
+
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        video.dataset.userPaused = "false";
+        video.play().catch(() => {});
+      } else {
+        video.dataset.userPaused = "true";
+        video.pause();
+      }
+    });
+  };
+
+  const optimizeHeroVideos = () => {
+    const videos = Array.from(document.querySelectorAll(".hero video, .page-hero-video"));
+    if (videos.length === 0) return;
+
+    videos.forEach((video) => {
+      bindTapToPause(video);
+
+      if (saveData) {
+        video.preload = "none";
+      }
+
+      if (reduceMotion || saveData) {
+        video.pause();
+      }
+    });
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            const userPaused = video.dataset.userPaused === "true";
+            if (entry.isIntersecting && !reduceMotion && !saveData && !userPaused) {
+              video.play().catch(() => {});
+            } else if (!userPaused) {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      videos.forEach((video) => observer.observe(video));
+    }
+  };
 
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navList = document.querySelector("[data-nav-list]");
@@ -87,6 +141,7 @@
   };
 
   ensureLoopingHeroVideos();
+  optimizeHeroVideos();
 
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length > 0 && "IntersectionObserver" in window) {
@@ -108,7 +163,6 @@
   }
 
   const counters = document.querySelectorAll("[data-counter]");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const runCounter = (el) => {
     const target = Number(el.getAttribute("data-counter"));
