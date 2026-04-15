@@ -152,24 +152,6 @@
     counters.forEach((counter) => counterObserver.observe(counter));
   }
 
-  const tiltTargets = document.querySelectorAll(".card, .topic-card, .types-card");
-  if (!reduceMotion) {
-    tiltTargets.forEach((card) => {
-      card.setAttribute("data-tilt", "true");
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        const rotateY = (x - 0.5) * 8;
-        const rotateX = (0.5 - y) * 8;
-        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
-      card.addEventListener("pointerleave", () => {
-        card.style.transform = "";
-      });
-    });
-  }
-
   document.querySelectorAll("[data-eco-tabs]").forEach((tabsRoot) => {
     const buttons = tabsRoot.querySelectorAll(".eco-tab-btn");
     const panels = tabsRoot.querySelectorAll(".eco-tab-panel");
