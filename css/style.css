@@ -33,6 +33,10 @@ body {
   overflow-x: hidden;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -844,6 +848,11 @@ th {
   font-weight: 600;
 }
 
+.eco-quiz label {
+  display: block;
+  padding: 0.2rem 0;
+}
+
 .quiz-result {
   margin-top: 0.7rem;
   font-weight: 700;
@@ -1210,6 +1219,17 @@ th {
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.34);
   }
 
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a {
+    display: block;
+    width: 100%;
+    padding: 0.72rem 0.85rem;
+    font-size: 0.98rem;
+  }
+
   .nav-list.is-open {
     display: flex;
   }
@@ -1223,8 +1243,22 @@ th {
     margin-bottom: 2.7rem;
   }
 
+  .hero h1 {
+    font-size: clamp(1.75rem, 9vw, 2.45rem);
+    max-width: 100%;
+  }
+
   .hero p {
     font-size: 1rem;
+  }
+
+  .hero-orbit,
+  .glow-panel::after,
+  .page-hero::before,
+  .page-hero::after,
+  .eco-knowledge::before,
+  .eco-knowledge::after {
+    display: none;
   }
 
   .cta-row {
@@ -1238,6 +1272,10 @@ th {
 
   .page-hero {
     padding: 4.2rem 0 2.8rem;
+  }
+
+  .page-hero p {
+    font-size: 0.98rem;
   }
 
   .section-title {
@@ -1265,13 +1303,35 @@ th {
     padding: 0.62rem;
   }
 
+  .marquee-track,
+  .impact-track {
+    animation-duration: 36s;
+  }
+
   .eco-tabs-nav {
     flex-direction: column;
     align-items: stretch;
   }
 
+  .eco-quiz .q {
+    padding: 0.82rem;
+  }
+
+  .eco-quiz label {
+    padding: 0.3rem 0;
+  }
+
+  .people-list li {
+    font-size: 0.88rem;
+  }
+
   .media-links {
     flex-wrap: wrap;
+  }
+
+  .media-card img,
+  .media-card video {
+    aspect-ratio: 4 / 3;
   }
 
   .metrics,
@@ -1308,6 +1368,15 @@ th {
   .impact-item,
   .marquee-track span {
     font-size: 0.79rem;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 0.72rem 1rem;
+  }
+
+  .panel {
+    border-radius: 16px;
   }
 }
 
