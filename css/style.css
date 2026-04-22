@@ -161,7 +161,7 @@ main {
 
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: clamp(520px, 88vh, 920px);
   display: grid;
   place-items: end start;
   overflow: clip;
@@ -330,6 +330,22 @@ section {
   border-radius: 999px;
   background: linear-gradient(90deg, #f0faf5, #def2e8);
   overflow: hidden;
+}
+
+.marquee-section {
+  width: 100%;
+  padding: 0 0 2.8rem;
+}
+
+.marquee-section .marquee-band {
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, #e9f7f1, #d4ecdf);
+}
+
+.marquee-section .marquee-track {
+  padding: 0.95rem clamp(1rem, 3vw, 2.4rem);
 }
 
 .marquee-track {
@@ -1268,13 +1284,22 @@ th {
   }
 
   .hero {
-    min-height: clamp(460px, 86svh, 740px);
+    min-height: clamp(380px, 74svh, 620px);
   }
 
   .hero video,
   .page-hero-video {
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center 40%;
     background: #08161c;
+  }
+
+  .marquee-section {
+    padding: 0 0 2.1rem;
+  }
+
+  .marquee-section .marquee-track {
+    padding: 0.85rem 0.8rem;
   }
 
   .hero-content {
