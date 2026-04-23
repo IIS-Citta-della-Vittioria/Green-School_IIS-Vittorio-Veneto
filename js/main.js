@@ -99,6 +99,21 @@
     footerYear.textContent = String(new Date().getFullYear());
   }
 
+  const redirectTargetRaw = document.body ? document.body.getAttribute("data-auto-redirect") : null;
+  if (redirectTargetRaw) {
+    const normalizedTarget = String(redirectTargetRaw).trim();
+    const hasUnsafeScheme = /^(?:[a-z]+:|\/\/)/i.test(normalizedTarget);
+    const isSafeRelativePath = /^[A-Za-z0-9._\-/]+$/.test(normalizedTarget);
+
+    if (!hasUnsafeScheme && isSafeRelativePath) {
+      const redirectDelayRaw = Number(document.body.getAttribute("data-auto-redirect-delay") || "3200");
+      const redirectDelay = Number.isFinite(redirectDelayRaw) && redirectDelayRaw >= 0 ? redirectDelayRaw : 3200;
+      window.setTimeout(() => {
+        window.location.assign(normalizedTarget);
+      }, redirectDelay);
+    }
+  }
+
   const ensureLoopingHeroVideos = () => {
     const shouldUseVideoBackground = !reduceMotion;
     const homeVideo = document.querySelector(".hero video");

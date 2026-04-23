@@ -308,6 +308,10 @@ h1 {
   outline: none;
 }
 
+.u-mt-1 {
+  margin-top: 1rem;
+}
+
 section {
   padding: 5rem 0;
   content-visibility: auto;
