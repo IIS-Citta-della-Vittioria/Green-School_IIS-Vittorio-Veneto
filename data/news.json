@@ -1,7 +1,21 @@
 {
-  "updatedAt": "2026-08-28T17:39:31Z",
+  "updatedAt": "2026-08-29T11:45:24Z",
   "sourceCount": 4,
   "items": [
+    {
+      "title": "INFODATA ENERGIA",
+      "url": "https://www.qualenergia.it/pro/documenti/quota-rinnovabili-4-9-21-31-pun-5-9-21-e-mwh-11309-petrolio-wti-b-6929-co2-3-9-21-e-ton-6133/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-08-29T05:15:00Z",
+      "summary": "SOMMARIO Rinnovabili elettriche: dati giornalieri, settimanali, mensili Prezzo unico nazionale (PUN) ed esteri Prezzi petrolio e gas Prezzi CO2 e certificati bianchi Potenza rinnovabile elettrica Consumi gas naturale Italia Dati climatici e"
+    },
+    {
+      "title": "BANDI E APPALTI",
+      "url": "https://www.qualenergia.it/pro/documenti/archivio-bandi/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-08-28T22:25:00Z",
+      "summary": "Sommario BANDI E APPALTI DEL GIORNO Vai alla pagina con i nuovi bandi e finanziamenti locali, regionali e nazionali e gare d’appalto per fornitura di beni e servizi su energia, edilizia, rinnovabili, efficienza energetica, mobilità sostenib"
+    },
     {
       "title": "Energia e competitività, dalla Bei 9,2 miliardi",
       "url": "https://www.qualenergia.it/pro/articoli-pro/energia-competitivita-bei-92-miliardi/",
@@ -22,20 +36,6 @@
       "source": "QualEnergia",
       "publishedAt": "2026-08-28T10:30:56Z",
       "summary": "Il Gse ha pubblicato il settimo atto di concessione relativo alla “facility” Pnrr su comunità energetiche e autoconsumo. I nuovi finanziamenti derivano dall’ampliamento delle risorse disponibili introdotto con il Dl Infrastrutture, converti"
-    },
-    {
-      "title": "Gli Usa preparano una stretta sulle batterie dalla Cina",
-      "url": "https://www.qualenergia.it/articoli/usa-aprono-stretta-batterie-cina/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-08-28T10:15:44Z",
-      "summary": "Gli Stati Uniti preparano una nuova stretta sulle apparecchiature straniere utilizzate nella rete elettrica, con potenziali conseguenze importanti anche per i sistemi di accumulo a batterie. Il presidente Donald Trump ha firmato il 26 agost"
-    },
-    {
-      "title": "Rinnovabili in bolletta, i Cfd iniziano a cambiare il conto",
-      "url": "https://www.qualenergia.it/pro/articoli-pro/rinnovabili-bolletta-cfd-iniziano-cambiare-conto/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-08-28T10:00:34Z",
-      "summary": "Nel preconsuntivo 2025 gli incentivi a due vie alle rinnovabili hanno portato 35 milioni di euro al conto Asos, anziché richiederne. È una cifra quasi irrisoria, rispetto ai 9,272 miliardi di costo complessivo calcolati da Arera come oneri "
     },
     {
       "title": "Registro elettronico",
