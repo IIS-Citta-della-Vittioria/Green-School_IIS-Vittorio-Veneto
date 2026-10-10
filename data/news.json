@@ -1,41 +1,41 @@
 {
-  "updatedAt": "2026-10-09T12:03:08Z",
+  "updatedAt": "2026-10-10T11:19:23Z",
   "sourceCount": 4,
   "items": [
+    {
+      "title": "INFODATA ENERGIA",
+      "url": "https://www.qualenergia.it/pro/documenti/quota-rinnovabili-4-9-21-31-pun-5-9-21-e-mwh-11309-petrolio-wti-b-6929-co2-3-9-21-e-ton-6133/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-10-10T04:30:00Z",
+      "summary": "SOMMARIO Rinnovabili elettriche: dati giornalieri, settimanali, mensili Prezzo unico nazionale (PUN) ed esteri Prezzi petrolio e gas Prezzi CO2 e certificati bianchi Potenza rinnovabile elettrica Mercato fotovoltaico ed eolico globale Consu"
+    },
+    {
+      "title": "BANDI E APPALTI",
+      "url": "https://www.qualenergia.it/pro/documenti/archivio-bandi/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-10-10T04:00:00Z",
+      "summary": "Sommario BANDI E APPALTI DEL GIORNO I nuovi bandi e finanziamenti locali, regionali e nazionali e gare d’appalto per fornitura di beni e servizi su energia, edilizia, rinnovabili, efficienza energetica, mobilità sostenibile. Il giorno 9 ott"
+    },
+    {
+      "title": "Eolico offshore, il via libera a Civitavecchia non basta a sbloccare il progetto",
+      "url": "https://www.qualenergia.it/pro/articoli-pro/eolico-offshore-via-libera-civitavecchia-non-basta-sbloccare-progetto/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-10-09T13:45:57Z",
+      "summary": "Qualche giorno fa è arrivata la notizia che il parco eolico offshore galleggiante che dovrebbe sorgere di fronte a Civitavecchia ha ottenuto il parere positivo nella procedura di VIA (Valutazione di Impatto Ambientale). Ne è seguito un comp"
+    },
+    {
+      "title": "Il rompicapo europeo degli stoccaggi di gas per l’inverno",
+      "url": "https://www.qualenergia.it/pro/articoli-pro/rompicapo-europeo-stoccaggi-gas-inverno/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-10-09T10:45:06Z",
+      "summary": "Gli stoccaggi europei di gas sono pieni al 72% circa a inizio ottobre, il livello più basso registrato in questo periodo da diversi anni. Basteranno per affrontare l’inverno in sicurezza? La risposta si potrebbe riassumere in “tendenzialmen"
+    },
     {
       "title": "Prezzi elettrici negativi, il Governo teme maggiori costi",
       "url": "https://www.qualenergia.it/pro/articoli-pro/prezzi-elettrici-negativi-governo-teme-maggiori-costi/",
       "source": "QualEnergia",
       "publishedAt": "2026-10-09T10:15:20Z",
       "summary": "L&#8217;introduzione delle offerte a prezzi negativi nei mercati elettrici del bilanciamento e del ridispacciamento potrebbe portare a “maggiori costi complessivi del sistema”. È la posizione espressa dal ministro dell&#8217;Ambiente e dell"
-    },
-    {
-      "title": "Corea del Sud, un maxi piano da 747 mld $ per rinnovabili e industria verde",
-      "url": "https://www.qualenergia.it/articoli/corea-sud-maxi-piano-747-mld-dollari-rinnovabili-industria-verde/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-10-09T09:45:48Z",
-      "summary": "La Corea del Sud ha annunciato un piano da circa 747 miliardi di dollari per accelerare la transizione energetica, ridurre le emissioni industriali e rafforzare la competitività delle proprie filiere tecnologiche entro il 2035. Tra gli obie"
-    },
-    {
-      "title": "Bollette elettriche, opportunità e criticità della riforma Ue per l’Italia",
-      "url": "https://www.qualenergia.it/pro/articoli-pro/bollette-elettriche-opportunita-criticitariforma-ue-per-italia/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-10-09T09:00:53Z",
-      "summary": "La Commissione Politiche Ue della Camera ha avviato l’esame della proposta con cui la Commissione europea vuole modificare il regolamento 2019/943 su bollette elettriche, costi del sistema, elettrificazione e digitalizzazione. Si tratta del"
-    },
-    {
-      "title": "Fotovoltaico domestico, cosa fare quando l’inverter si stacca per tensione elevata",
-      "url": "https://www.qualenergia.it/pro/articoli-pro/fotovoltaico-domestico-cosa-fare-quando-inverter-stacca-tensione-elevata/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-10-09T08:00:14Z",
-      "summary": "Con l’aumento degli impianti fotovoltaici collegati alle reti di distribuzione, i distacchi degli inverter per tensione elevata stanno diventando sempre più frequenti, soprattutto nei mesi di maggiore produzione fotovoltaica. A segnalarlo a"
-    },
-    {
-      "title": "PPA, come cambia il mercato tra contratti ibridi e nuove regole",
-      "url": "https://www.qualenergia.it/articoli/ppa-come-cambia-mercato-contratti-ibridi-nuove-regole/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-10-09T07:30:32Z",
-      "summary": "I PPA aziendali stanno diventando uno strumento per proteggersi dalla volatilità dei prezzi energetici, spostando il baricentro verso soluzioni ibride in grado di superare le rigidità dei Power Purchase Agreement incentrati su una singola t"
     },
     {
       "title": "Registro elettronico",
