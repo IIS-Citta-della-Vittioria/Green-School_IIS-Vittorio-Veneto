@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-11-06T13:09:26Z",
+  "updatedAt": "2026-11-07T11:52:57Z",
   "sourceCount": 4,
   "items": [
+    {
+      "title": "BANDI E APPALTI",
+      "url": "https://www.qualenergia.it/pro/documenti/archivio-bandi/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-07T05:00:00Z",
+      "summary": "Sommario BANDI E APPALTI DEL GIORNO I nuovi bandi e finanziamenti locali, regionali e nazionali e gare d’appalto per fornitura di beni e servizi su energia, edilizia, rinnovabili, efficienza energetica, mobilità sostenibile. Il giorno 6 nov"
+    },
+    {
+      "title": "Il vincolo ulivi per le rinnovabili è legge",
+      "url": "https://www.qualenergia.it/pro/articoli-pro/vincolo-ulivi-per-rinnovabili-legge/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-06T15:07:14Z",
+      "summary": "Mercoldì 4 novembre il Senato ha approvato in via definitiva il disegno di legge n. 2015 recante “misure di consolidamento e sviluppo del settore agricolo”, meglio noto come ColtivaItalia (disponibile in basso). Al suo interno è stato quind"
+    },
+    {
+      "title": "BNZ avvia la costruzione di due BESS in provincia di Viterbo",
+      "url": "https://www.qualenergia.it/articoli/bnz-avvia-costruzione-due-bess-provincia-viterbo/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-06T14:15:11Z",
+      "summary": "BNZ, produttore indipendente di energia (IPP) che sviluppa e gestisce progetti rinnovabili multitecnologici di nuova generazione, ha annunciato l’avvio dei lavori di costruzione dei sistemi di accumulo di energia a batterie (BESS) presso gl"
+    },
     {
       "title": "Facility Parco Agrisolare, il Gse avvia il soccorso istruttorio",
       "url": "https://www.qualenergia.it/pro/articoli-pro/facility-parco-agrisolare-gse-avvia-soccorso-istruttorio/",
@@ -10,32 +31,11 @@
       "summary": "Il Gse ha avviato il soccorso istruttorio per i progetti della Facility Parco Agrisolare considerati “non idonei” in seguito agli esiti delle istruttorie concluse il 31 agosto 2026 e pubblicate il 13 ottobre. Lo ha comunicato lo stesso Gest"
     },
     {
-      "title": "Premio Energy Efficiency: candidature aperte fino al 15 gennaio 2027",
-      "url": "https://www.qualenergia.it/articoli/premio-energy-efficiency-candidature-aperte-fino-al-15-gennaio-2027/",
+      "title": "Iea: nell’Ue grazie alle rinnovabili prezzi più bassi di 55 euro per MWh",
+      "url": "https://www.qualenergia.it/articoli/senza-fer-ue-pagheremmo-mwh-55-euro-piu/",
       "source": "QualEnergia",
-      "publishedAt": "2026-11-06T12:00:53Z",
-      "summary": "Consumare meno energia significa ridurre i costi, limitare l’esposizione alle oscillazioni dei prezzi energetici e rendere le imprese più competitive, ma anche ridurre le emissioni e contribuire alla trasformazione del sistema energetico. È"
-    },
-    {
-      "title": "Dl Bollette rinviato per la seconda volta in Cdm",
-      "url": "https://www.qualenergia.it/articoli/dl-bollette-secondo-rinvio-cdm/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-06T11:30:41Z",
-      "summary": "Ancora un rinvio per il decreto Bollette, il provvedimento con cui il governo intende introdurre un tetto al prezzo del gas utilizzato nella generazione termoelettrica, sul modello del Tope iberico, per ridurre i costi dell&#8217;elettricit"
-    },
-    {
-      "title": "ReCommon diffida SACE sulle garanzie pubbliche al progetto di Gnl in Mozambico",
-      "url": "https://www.qualenergia.it/articoli/recommon-diffida-sace-garanzie-pubbliche-progetto-gnl-mozambico/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-06T10:15:30Z",
-      "summary": "ReCommon ha annunciato il 5 novembre l&#8217;invio di una diffida a SACE, al Ministero dell&#8217;Economia e delle Finanze (MEF) e a quello degli Affari Esteri e della Cooperazione Internazionale. L’associazione non profit italiana, che mon"
-    },
-    {
-      "title": "Cop 31 in Turchia: l’uscita dalle fonti fossili entrerà nei negoziati?",
-      "url": "https://www.qualenergia.it/articoli/cop-31-turchia-uscita-fonti-fossili-entrera-negoziati/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-06T09:15:14Z",
-      "summary": "Dall’Amazzonia al Mediterraneo: la scelta della sede della prossima Conferenza Onu sul clima (Cop 31) non sembra casuale. La Cop 31 si apre ufficialmente lunedì 9 novembre (fino al 20 del mese) ad Antalya, in Turchia, città turistica balnea"
+      "publishedAt": "2026-11-06T12:30:54Z",
+      "summary": "Senza il fotovoltaico e l’eolico installati negli ultimi 5 anni, nel 2026 i prezzi elettrici all’ingrosso in 11 mercati dell’Ue sarebbero quasi 55 euro/MWh più alti. Intanto, però, il calo dei prezzi proprio nelle ore di produzione delle ri"
     },
     {
       "title": "Registro elettronico",
