@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-07T11:52:57Z",
+  "updatedAt": "2026-11-08T12:06:56Z",
   "sourceCount": 4,
   "items": [
+    {
+      "title": "INFODATA ENERGIA",
+      "url": "https://www.qualenergia.it/pro/documenti/quota-rinnovabili-4-9-21-31-pun-5-9-21-e-mwh-11309-petrolio-wti-b-6929-co2-3-9-21-e-ton-6133/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-08T05:30:00Z",
+      "summary": "SOMMARIO Rinnovabili elettriche: dati giornalieri, settimanali, mensili Prezzo unico nazionale (PUN) ed esteri Prezzi petrolio e gas Prezzi CO2 e certificati bianchi Potenza rinnovabile elettrica Mercato fotovoltaico ed eolico globale Consu"
+    },
     {
       "title": "BANDI E APPALTI",
       "url": "https://www.qualenergia.it/pro/documenti/archivio-bandi/",
@@ -29,13 +36,6 @@
       "source": "QualEnergia",
       "publishedAt": "2026-11-06T13:00:23Z",
       "summary": "Il Gse ha avviato il soccorso istruttorio per i progetti della Facility Parco Agrisolare considerati “non idonei” in seguito agli esiti delle istruttorie concluse il 31 agosto 2026 e pubblicate il 13 ottobre. Lo ha comunicato lo stesso Gest"
-    },
-    {
-      "title": "Iea: nell’Ue grazie alle rinnovabili prezzi più bassi di 55 euro per MWh",
-      "url": "https://www.qualenergia.it/articoli/senza-fer-ue-pagheremmo-mwh-55-euro-piu/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-06T12:30:54Z",
-      "summary": "Senza il fotovoltaico e l’eolico installati negli ultimi 5 anni, nel 2026 i prezzi elettrici all’ingrosso in 11 mercati dell’Ue sarebbero quasi 55 euro/MWh più alti. Intanto, però, il calo dei prezzi proprio nelle ore di produzione delle ri"
     },
     {
       "title": "Registro elettronico",
