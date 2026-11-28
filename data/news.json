@@ -1,7 +1,21 @@
 {
-  "updatedAt": "2026-11-27T15:29:18Z",
+  "updatedAt": "2026-11-28T14:27:21Z",
   "sourceCount": 4,
   "items": [
+    {
+      "title": "INFODATA ENERGIA",
+      "url": "https://www.qualenergia.it/pro/documenti/quota-rinnovabili-4-9-21-31-pun-5-9-21-e-mwh-11309-petrolio-wti-b-6929-co2-3-9-21-e-ton-6133/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-28T05:15:00Z",
+      "summary": "SOMMARIO Rinnovabili elettriche: dati giornalieri, settimanali, mensili Prezzo unico nazionale (PUN) ed esteri Prezzi petrolio e gas Prezzi CO2 e certificati bianchi Potenza rinnovabile elettrica Mercato fotovoltaico ed eolico globale Consu"
+    },
+    {
+      "title": "BANDI E APPALTI",
+      "url": "https://www.qualenergia.it/pro/documenti/archivio-bandi/",
+      "source": "QualEnergia",
+      "publishedAt": "2026-11-28T05:00:00Z",
+      "summary": "Sommario BANDI E APPALTI DEL GIORNO I nuovi bandi e finanziamenti locali, regionali e nazionali e gare d’appalto per fornitura di beni e servizi su energia, edilizia, rinnovabili, efficienza energetica, mobilità sostenibile. Il giorno 27 no"
+    },
     {
       "title": "Arera: ecco cosa cambiare del Dl Bollette bis",
       "url": "https://www.qualenergia.it/pro/articoli-pro/arera-ecco-cosa-cambiare-dl-bollette-bis/",
@@ -22,20 +36,6 @@
       "source": "QualEnergia",
       "publishedAt": "2026-11-27T12:30:45Z",
       "summary": "Lasciare acceso il riscaldamento a lungo oppure riscaldare casa solo quando serve? Come regolare la temperatura dell’acqua che circola nei radiatori? E quanto ostacolano la diffusione del calore tende, mobili ed errate abitudini quotidiane?"
-    },
-    {
-      "title": "Rinnovabili, la tutela del paesaggio non può essere un veto ai progetti",
-      "url": "https://www.qualenergia.it/pro/articoli-pro/rinnovabili-tutela-paesaggio-non-puo-essere-veto-progetti/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-27T12:15:55Z",
-      "summary": "La tutela del paesaggio deve essere bilanciata, nell’ambito della Conferenza di servizi, con gli altri interessi coinvolti e non può tradursi in un veto aprioristico contro l’installazione di impianti alimentati da fonti rinnovabili. Inoltr"
-    },
-    {
-      "title": "Metano, il rinvio del regolamento europeo è quasi realtà",
-      "url": "https://www.qualenergia.it/articoli/metano-rinvio-regolamento-europeo-quasi-realta/",
-      "source": "QualEnergia",
-      "publishedAt": "2026-11-27T12:00:01Z",
-      "summary": "Il Parlamento europeo ha messo nero su bianco l’accordo della scorsa settimana con il Consiglio Ue per rinviare di due anni l’applicazione di alcune norme del regolamento 2024/1787 sulle emissioni di metano associate alle importazioni di pe"
     },
     {
       "title": "Registro elettronico",
